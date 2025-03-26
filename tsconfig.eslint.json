@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "hooks/**/*.ts",      // Added hooks directory
+    "middleware.ts",      // Added middleware file
+    "next-env.d.ts",      // Added next-env file
+    "tailwind.config.ts", // Added tailwind config file
+    "vite.config.ts"
+  ]
+}
