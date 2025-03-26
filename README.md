@@ -1,79 +1,80 @@
 # US Trade Navigator
 
-A comprehensive platform for global trade intelligence. Access real-time trade data, market insights, and HS code analytics to make informed decisions.
+A modern customer portal for the US Trade Navigator system using Vite, React, TypeScript, Supabase, and Stripe.
 
-## Features
+## Deployment to Netlify
 
-- Global Trade Data Analysis
-- HS Code Analytics
-- Market Insights
-- Real-time Trade Statistics
-- User Authentication
-- Subscription Management
-- Interactive Dashboard
+### Prerequisites
 
-## Tech Stack
+1. Ensure your code is committed to GitHub (or another Git provider)
+2. Create a Netlify account if you don't have one already
 
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Supabase
-- shadcn/ui
-- Lucide Icons
+### Option 1: Deploy from the Netlify UI
 
-## Getting Started
+1. Log in to your Netlify account
+2. Click "Add new site" > "Import an existing project"
+3. Connect your Git provider (GitHub, GitLab, or Bitbucket)
+4. Select your repository
+5. Configure the build settings:
+   - Branch to deploy: `master` (or your default branch)
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+6. Click "Deploy site"
 
-1. Clone the repository:
+### Option 2: Deploy using the Netlify CLI
+
+1. Install the Netlify CLI globally:
    ```bash
-   git clone https://github.com/yourusername/us-trade-navigator.git
+   npm install -g netlify-cli
    ```
 
-2. Install dependencies:
+2. Login to Netlify:
    ```bash
-   cd us-trade-navigator
-   npm install
+   netlify login
    ```
 
-3. Create a `.env` file in the root directory and add your Supabase credentials:
-   ```
-   VITE_SUPABASE_URL=your_supabase_url
-   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-   ```
-
-4. Start the development server:
+3. Initialize your site:
    ```bash
-   npm run dev
+   netlify init
+   ```
+   - Select "Create & configure a new site"
+   - Follow the prompts to set up your site
+
+4. Deploy your site:
+   ```bash
+   netlify deploy --prod
    ```
 
-## Project Structure
+### Environment Variables
 
+Make sure to set the following environment variables in your Netlify site settings:
+
+- `VITE_SUPABASE_URL`: Your Supabase project URL
+- `VITE_SUPABASE_ANON_KEY`: Your Supabase anonymous key
+- `VITE_STRIPE_PUBLISHABLE_KEY`: Your Stripe publishable key
+
+### Continuous Deployment
+
+Netlify will automatically deploy your site when you push changes to your Git repository. The build settings are already configured in the `netlify.toml` file.
+
+## Development
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
 ```
-us-trade-navigator/
-├── public/
-├── src/
-│   ├── components/
-│   ├── contexts/
-│   ├── lib/
-│   ├── pages/
-│   └── App.tsx
-├── supabase/
-│   └── migrations/
-└── package.json
+
+### Running Locally
+
+```bash
+# Start development server
+npm run dev
 ```
 
-## Database Setup
+### Building for Production
 
-The project uses Supabase as the backend. The database schema and migrations are located in the `supabase/migrations` directory.
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+```bash
+# Build for production
+npm run build

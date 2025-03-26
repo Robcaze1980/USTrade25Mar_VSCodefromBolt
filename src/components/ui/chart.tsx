@@ -38,12 +38,12 @@ export function ChartContainer({
 
 interface ChartTooltipProps extends React.ComponentProps<typeof Tooltip> {
   content: React.ReactNode
-  cursor?: boolean
+  _cursor?: boolean
 }
 
 export function ChartTooltip({
   content,
-  cursor = true,
+  _cursor = true,  // renamed to indicate unused parameter
   children,
   ...props
 }: ChartTooltipProps) {
